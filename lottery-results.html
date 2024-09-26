@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลหวย - Huayprasert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #900000;
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-section, .date-section, .result-check-section {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 12px;
+        }
+
+        .search-section input[type="text"], 
+        .date-section input[type="date"], 
+        .result-check-section select {
+            width: 60%;
+            max-width: 280px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-right: 10px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .search-section input[type="text"] {
+          font-size: 14px;
+        }
+  
+        .search-section button, .date-section button, .result-check-section button {
+            padding: 12px 20px;
+            background-color: #ff9900;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Kanit', sans-serif;
+            transition: background-color 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .search-section button:hover, .date-section button:hover, .result-check-section button:hover {
+            background-color: #e68a00;
+        }
+
+        .result-check-section {
+            margin-bottom: 100px;
+        }
+
+        /* ส่วนของการแสดงผลหวยเพิ่มเติม */
+        .lottery-results-section {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 12px;
+        }
+
+        .lottery-results-section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #900000;
+        }
+
+        .lottery-results-section .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .lottery-results-section .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item .icon {
+            font-size: 24px;
+            color: #ff9900;
+            margin-right: 15px;
+        }
+
+        .result-item .text {
+            flex-grow: 1;
+            font-size: 14px;
+        }
+
+        .result-item .result-number {
+            font-size: 15px;
+            font-weight: bold;
+            color: #900000;
+        }
+
+        /* เพิ่มสีสันและไอคอน */
+        .highlight {
+            color: #ff9900;
+            font-weight: bold;
+        }
+
+        /* เมนูด้านล่าง */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 35px;
+            background-color: #900000;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            flex-grow: 1;
+            margin-top: 10px;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            display: block;
+            margin: 0 auto -1px;
+        }
+
+        .nav-item span {
+            font-size: 11px;
+            margin-top: -2px;
+        }
+
+        .nav-item:hover {
+            background-color: #ff9900;
+            border-radius: 10px;
+            padding: 10px 0;
+        }
+
+        .nav-item.active {
+            background-color: #ff9900;
+            border-radius: 10px;
+            padding: 10px 0;
+        }
+        .small-button {
+        padding: 5px 10px; /* ลดขนาดของ padding เพื่อทำให้ปุ่มเล็กลง */
+        font-size: 12px; /* ลดขนาดฟอนต์ */
+        width: auto; /* ให้ปุ่มปรับขนาดตามเนื้อหา */
+        background-color: #ff9900;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+  
+        .small-select {
+        font-size: 8px; /* ปรับขนาดฟอนต์ให้เล็กลง */
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 300px; /* ความกว้างสูงสุด */
+        font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์ Kanit */
+    }
+    </style>
+</head>
+<body>
+
+<header>ผลหวย</header>
+
+<section class="search-section">
+    <input type="text" placeholder="ค้นหาหวยที่ต้องการตรวจสอบ...">
+    <button class="small-button">ค้นหา</button>
+</section>
+
+<section class="date-section">
+    <input type="date" placeholder="เลือกวันที่">
+    <button class="small-button">เลือกวันที่</button>
+</section>
+
+<section class="result-check-section">
+    <select class="small-select">
+        <option value="thai">หวยรัฐบาลไทย</option>
+        <option value="laos">หวยลาว</option>
+        <option value="hanoi">หวยฮานอย</option>
+        <option value="malay">หวยมาเลย์</option>
+    </select>
+    <button class="small-button">ตรวจสอบผลหวย</button>
+</section>
+
+<!-- ส่วนใหม่สำหรับการแสดงผลหวยเพิ่มเติม -->
+<section class="lottery-results-section">
+    <h2>ผลหวยล่าสุด</h2>
+    <div class="result-item">
+        <div class="icon"><i class="fas fa-star"></i></div>
+        <div class="text">หวยรัฐบาลไทย: รางวัลที่ 1</div>
+        <div class="result-number highlight">123456</div>
+    </div>
+    <div class="result-item">
+        <div class="icon"><i class="fas fa-heart"></i></div>
+        <div class="text">หวยลาว: รางวัลที่ 1</div>
+        <div class="result-number highlight">654321</div>
+    </div>
+    <div class="result-item">
+        <div class="icon"><i class="fas fa-diamond"></i></div>
+        <div class="text">หวยฮานอย: รางวัลที่ 1</div>
+        <div class="result-number highlight">789012</div>
+    </div>
+    <div class="result-item">
+        <div class="icon"><i class="fas fa-gem"></i></div>
+        <div class="text">หวยมาเลย์: รางวัลที่ 1</div>
+        <div class="result-number highlight">210987</div>
+    </div>
+</section>
+
+<!-- ส่วนของเมนูด้านล่าง -->
+<div class="bottom-nav">
+    <a href="inhome.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>หน้าแรก</span>
+    </a>
+    <a href="buy-lottery.html" class="nav-item">
+        <i class="fas fa-shopping-cart"></i>
+        <span>ซื้อหวย</span>
+    </a>
+    <a href="lottery-results.html" class="nav-item active"> <!-- ต้องตั้ง active ในเมนูที่ถูกเลือก -->
+        <i class="fas fa-chart-bar"></i>
+        <span>ผลหวย</span>
+    </a>
+    <a href="my-account.html" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>บัญชีของฉัน</span>
+    </a>
+</div>
+
+</body>
+</html>

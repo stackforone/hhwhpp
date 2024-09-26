@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บัญชีของฉัน</title>
+    <link rel="stylesheet" href="inhome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #900000;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 19px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-section img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-section h2 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #900000;
+        }
+
+        .profile-section p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .account-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .account-actions a {
+            text-decoration: none;
+            color: white;
+            background-color: #900000;
+            padding: 8px 10px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .account-actions a:hover {
+            background-color: #ff9900;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #900000;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .btn-save {
+            width: 100%;
+            padding: 10px;
+            background-color: #900000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .btn-save:hover {
+            background-color: #ff9900;
+        }
+
+        .logout-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout-button a {
+            color: #900000;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #900000;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .logout-button a:hover {
+            background-color: #900000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        บัญชีของฉัน
+    </header>
+
+    <div class="container">
+        <!-- ส่วนแสดงโปรไฟล์ -->
+        <div class="profile-section">
+            <img src="profile-placeholder.png" alt="โปรไฟล์">
+            <h2></h2>
+            <p></p>
+        </div>
+
+        
+        <!-- ฟอร์มแก้ไขข้อมูลส่วนตัว -->
+        <div id="edit-profile">
+            <h3 class="section-title">แก้ไขข้อมูลส่วนตัว</h3>
+            <div class="form-group">
+                <label for="username">ชื่อผู้ใช้</label>
+                <input type="text" id="username" value="">
+            </div>
+            <div class="form-group">
+                <label for="email">อีเมล</label>
+                <input type="email" id="email" value="">
+            </div>
+            <button class="btn-save">บันทึกข้อมูล</button>
+        </div>
+
+        <!-- ฟอร์มเปลี่ยนรหัสผ่าน -->
+        <div id="change-password" style="margin-top: 40px;">
+            <h3 class="section-title">เปลี่ยนรหัสผ่าน</h3>
+            <div class="form-group">
+                <label for="old-password">รหัสผ่านเดิม</label>
+                <input type="password" id="old-password" placeholder="กรอกรหัสผ่านเดิม">
+            </div>
+            <div class="form-group">
+                <label for="new-password">รหัสผ่านใหม่</label>
+                <input type="password" id="new-password" placeholder="กรอกรหัสผ่านใหม่">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">ยืนยันรหัสผ่านใหม่</label>
+                <input type="password" id="confirm-password" placeholder="ยืนยันรหัสผ่านใหม่">
+            </div>
+            <button class="btn-save">เปลี่ยนรหัสผ่าน</button>
+        </div>
+
+        <!-- ปุ่มออกจากระบบ -->
+        <div class="logout-button">
+            <a href="#">ออกจากระบบ</a>
+        </div>
+    </div>
+     
+    <!-- แท็บเมนูด้านล่าง -->
+    <div class="bottom-nav">
+        <a href="#" class="nav-item" onclick="loadPage('inhome.html')">
+            <i class="fas fa-home"></i>
+            <span>หน้าแรก</span>
+        </a>
+        <a href="#" class="nav-item" onclick="loadPage('buy-lottery.html')">
+            <i class="fas fa-shopping-cart"></i>
+            <span>ซื้อหวย</span>
+        </a>
+        <a href="#" class="nav-item" onclick="loadPage('lottery-results.html')">
+            <i class="fas fa-chart-bar"></i>
+            <span>ผลหวย</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>บัญชีของฉัน</span>
+        </a>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

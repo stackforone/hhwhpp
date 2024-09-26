@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huayprasert</title>
+    <link rel="stylesheet" href="inhome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">HUAYYY</a>
+            </div>
+            <div class="login-button">
+                <a href="#" class="btn-login">เข้าสู่ระบบ</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="content" class="main-content">
+        <!-- หวยไทย -->
+        <div class="lottery-item">
+            <h3>หวยรัฐบาลไทย</h3>
+            <span>ปิดรับ 15:00 น. ผลออก 16:00 น.</span>
+            <a href="https://www.glo.or.th/" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <!-- หวยลาว -->
+        <div class="lottery-item">
+            <h3>หวยลาว</h3>
+            <span>ปิดรับ 20:00 น. ผลออก 20:30 น.</span>
+            <a href="https://www.laounion.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <!-- หวยฮานอย -->
+        <div class="lottery-item">
+            <h3>ฮานอย VIP</h3>
+            <span>ปิดรับ 18:50 น. ผลออก 19:30 น.</span>
+            <a href="http://www.mlnhngoc.net" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <div class="lottery-item">
+            <h3>ฮานอยพิเศษ</h3>
+            <span>ปิดรับ 17:00 น. ผลออก 17:30 น.</span>
+            <a href="http://www.xsthm.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <!-- หวยหุ้น -->
+        <div class="lottery-item">
+            <h3>หุ้นนิเคอิบ่าย VIP</h3>
+            <span>ปิดรับ 13:20 น. ผลออก 13:25 น.</span>
+            <a href="https://nikkeivipstock.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <div class="lottery-item">
+            <h3>หุ้นฮั่งเส็งบ่าย VIP</h3>
+            <span>ปิดรับ 15:20 น. ผลออก 15:25 น.</span>
+            <a href="https://hangsengvip.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <!-- หวย VIP -->
+        <div class="lottery-item">
+            <h3>อังกฤษ VIP</h3>
+            <span>ผลออก 21:45 - 21:50 น.</span>
+            <a href="https://lottosuperrich.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <div class="lottery-item">
+            <h3>เยอรมัน VIP</h3>
+            <span>ผลออก 22:45 - 22:50 น.</span>
+            <a href="https://lottosuperrich.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+
+        <div class="lottery-item">
+            <h3>รัสเซีย VIP</h3>
+            <span>ผลออก 23:45 - 23:50 น.</span>
+            <a href="https://lottosuperrich.com" target="_blank" class="result-link">ดูผล</a>
+        </div>
+    </section>
+
+    <!-- แท็บเมนูด้านล่าง -->
+    <div class="bottom-nav">
+        <a href="#" class="nav-item" onclick="loadPage('inhome.html')">
+            <i class="fas fa-home"></i>
+            <span>หน้าแรก</span>
+        </a>
+        <a href="#" class="nav-item" onclick="loadPage('buy-lottery.html')">
+            <i class="fas fa-shopping-cart"></i>
+            <span>ซื้อหวย</span>
+        </a>
+        <a href="#" class="nav-item" onclick="loadPage('lottery-results.html')">
+            <i class="fas fa-chart-bar"></i>
+            <span>ผลหวย</span>
+        </a>
+        <a href="" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>บัญชีของฉัน</span>
+        </a>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
